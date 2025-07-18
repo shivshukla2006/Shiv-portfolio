@@ -1,7 +1,40 @@
-.App {
-  text-align: center;
+/* App.css – Hacker UI Global Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: #00ffb3;
+  font-family: 'Orbitron', 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
+/* Glowing Cursor */
+body,
+html {
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00ffb3;
+  border-radius: 4px;
+}
+
+/* App Container */
+.App {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo Animation */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,21 +46,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +53,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Header Styling */
+.App-header {
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #00ffb3;
+}
+
+/* Link Styling */
+.App-link {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #a3f3ff;
+  text-shadow: 0 0 12px #a3f3ff;
 }

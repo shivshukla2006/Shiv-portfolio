@@ -1,18 +1,36 @@
-/* timeline.css */
+/* timeline.css – Hacker Glow Edition */
 
 .timeline-section {
   padding: 4rem 1.5rem;
-  background-color: #0f172a;
-  color: white;
+  background: radial-gradient(circle at top left, #0f172a, #050505);
+  color: #00ffb3;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing Line Divider (optional, center alignment) */
+.timeline-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00ffb3, transparent);
+  opacity: 0.07;
+  z-index: 0;
 }
 
 .timeline-title {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #ffffff;
   letter-spacing: -0.5px;
+  background: linear-gradient(to right, #00ffb3, #00ffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px #00ffb3;
 }
 
 @media (min-width: 768px) {
@@ -28,6 +46,7 @@
   max-width: 720px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 .timeline-item {
@@ -38,40 +57,56 @@
 }
 
 .timeline-dot {
-  width: 12px;
-  height: 12px;
-  background-color: #7c3aed;
+  width: 14px;
+  height: 14px;
+  background-color: #00ffb3;
   border-radius: 50%;
   margin-top: 0.4rem;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 12px #00ffb3;
   flex-shrink: 0;
+  position: relative;
+}
+
+.timeline-dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00ffb333;
+  transform: translate(-50%, -50%);
 }
 
 .timeline-content {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 255, 179, 0.05);
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
   text-align: left;
   flex: 1;
-  border-left: 3px solid #7c3aed;
-  transition: background 0.3s ease;
+  border-left: 3px solid #00ffb3;
+  box-shadow: 0 0 12px rgba(0, 255, 179, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 255, 179, 0.08);
+  box-shadow: 0 0 14px rgba(0, 255, 179, 0.3);
 }
 
 .timeline-event {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
-  color: #ffffff;
+  color: #00ffb3;
+  text-shadow: 0 0 6px #00ffb3;
 }
 
 .timeline-date {
   font-size: 0.9rem;
   font-style: italic;
-  color: #cbd5e1;
+  color: #a3f3ff;
   margin-bottom: 0.6rem;
 }
 

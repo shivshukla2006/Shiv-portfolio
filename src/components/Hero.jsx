@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import '../styles/Hero.css';
 import profilePic from '../assets/shiv.png';
+import MatrixRain from './MatrixRain'; // 🌧️ Hacker-style code rain overlay
 
 const Hero = () => {
   // Scroll handler for the button
@@ -19,6 +20,8 @@ const Hero = () => {
       transition={{ duration: 0.6 }}
       className="hero-container"
     >
+      <MatrixRain />
+
       <motion.img
         src={profilePic}
         alt="Shiv Shukla"
